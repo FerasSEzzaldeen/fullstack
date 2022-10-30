@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import MainHeader from './components/MainHeader/MainHeader';
+import NavBar from './components/UI/NavBar/NavBar';
+import styled from "styled-components"
+
+const Main = styled.main`
+  margin: 0;
+  display: flex;
+`;
+
+const MainScreen = styled.div`
+  width: 80%;
+  background-color: skyblue;
+`;
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+
+  const logoutHandler = () => {
+    setIsLoggedIn(false);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <MainHeader isAuthenticated={isLoggedIn} onLogout={logoutHandler} />
+      <Main>
+        <NavBar/>
+        <MainScreen></MainScreen>
+      </Main>
+
+    </React.Fragment>
   );
 }
 
