@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import MainHeader from './components/MainHeader/MainHeader';
-import NavBar from './components/UI/NavBar/NavBar';
+import NavBar from './components/UI/SideBar/SideBar';
 import styled from "styled-components"
+import MainPage from './components/pages/main/MainPage';
+
+
 
 const Main = styled.main`
   margin: 0;
@@ -9,7 +12,7 @@ const Main = styled.main`
 `;
 
 const MainScreen = styled.div`
-  width: 80%;
+  width: 85%;
   background-color: skyblue;
 `;
 
@@ -26,7 +29,9 @@ function App() {
       <MainHeader isAuthenticated={isLoggedIn} onLogout={logoutHandler} />
       <Main>
         <NavBar/>
-        <MainScreen></MainScreen>
+        <MainScreen>
+          <MainPage />
+        </MainScreen>
       </Main>
 
     </React.Fragment>

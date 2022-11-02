@@ -1,32 +1,50 @@
-import React from 'react';
-import styled from "styled-components"
-import List from './List';
-const NavSec = styled.div`
-    background-color: gray;
-    width: 20%;
-    height: 800px;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+const NavBarWrapper = styled.div`
+  width: 100%;
+  height: 70px;
+  background-color: wheat;
+  display: flex;
 `;
 
-const Wrapper = styled.div`
-    width: 80%;
-    height: 80%;
+const NavBarUl = styled.ul`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
 `;
 
-const NavBar = () =>{
-    return(
-        <NavSec>
-            <Wrapper>
-                <List title={"Marketing Policies"} subs={["Support Trials", "Gifting Policies"]} />
-                <List title={"Financial Policies"} subs={["Available Credit Cards", "Available Payment Methods", "Allow for Credit and Bill Me", "Refund Policies", "Declined Payment Policies"]} />
-                <List title={"Digital Subscriptions"} subs={["Require Physical Address"]} />
+const NavBarLi = styled.li`
+  margin-left: 10px;
+`;
 
-            </Wrapper>
-        </NavSec>
-    )
-}
+const LinkButton = styled(Link)`
+  display: flex;
+  width: 100px;
+  height: 60px;
+  background-color: blue;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+`;
 
-export default NavBar
+const NavBar = (props) => {
+  return (
+    <>
+      <NavBarWrapper>
+        <NavBarUl>
+          {props.navlist.map((item) => (
+            <NavBarLi>
+              <LinkButton to={item["path"]}>{item["title"]}</LinkButton>
+            </NavBarLi>
+          ))}
+        </NavBarUl>
+      </NavBarWrapper>
+    </>
+  );
+};
+
+export default NavBar;
