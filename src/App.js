@@ -13,7 +13,7 @@ const Main = styled.main`
 
 const MainScreen = styled.div`
   width: 85%;
-  background-color: skyblue;
+  background-color: #fff;
 `;
 
 function App() {

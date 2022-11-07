@@ -6,7 +6,7 @@ import router from "../../../router";
 const MainPage = () => {
   return (
     <>
-      <RouterProvider router={router} />;
+      <RouterProvider router={router} />
     </>
   );
 };

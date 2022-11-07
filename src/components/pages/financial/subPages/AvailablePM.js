@@ -1,5 +1,5 @@
 import NavBar from "../../../UI/NavBar/NavBar";
-
+import styled from "styled-components";
 const navlist = [
   { title: "Available Credit Cards", path: "/financial/availavlecc" },
   { title: "Available Payment Methods", path: "/financial/availablepm" },
@@ -8,11 +8,22 @@ const navlist = [
   { title: "Declined Payment Policies", path: "/financial/declinedpp" },
 ];
 
+const Wrapper = styled.div`
+  margin: 20px;
+`;
+
+const MyParagraph = styled.p``;
+
 const AvailablePM = () => {
   return (
     <>
       <NavBar navlist={navlist} />
-      <h1>welcome AvailablePM</h1>;
+      <Wrapper>
+        <h1>Available Payment Methods</h1>
+        <MyParagraph>
+          Any approved payment methods can be disabled for each brand you have
+        </MyParagraph>
+      </Wrapper>
     </>
   );
 };

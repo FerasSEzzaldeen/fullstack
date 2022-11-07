@@ -3,7 +3,7 @@ import styled from "styled-components";
 const NavBarWrapper = styled.div`
   width: 100%;
   height: 70px;
-  background-color: wheat;
+  background-color: #B2B2B2;
   display: flex;
 `;
 
@@ -22,13 +22,21 @@ const LinkButton = styled(Link)`
   display: flex;
   width: 100px;
   height: 60px;
-  background-color: blue;
-  border-radius: 10px;
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: white;
+  color: #3C4048;
   text-decoration: none;
+  border-bottom: #a7a8a7 2px solid;
+  transition: .2s;
+
+  &:hover{
+    color: #EAEAEA;
+    border-bottom: #EAEAEA 2px solid;
+    font-size: 17px;
+    margin-right: 20px;
+  }
+
 `;
 
 const NavBar = (props) => {
